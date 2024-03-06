@@ -36,13 +36,37 @@ while True:
     choice = input("Enter your choice (1-5): ")
 
     if choice == '1':
+
         # https://www.w3schools.com/python/python_dictionaries_access.asp
+        pokemon_index = input("Enter pokemon number: ")
+        pokemon_number = int(pokemon_index) - 1
+        print(pokemons[pokemon_number])
+
+
+
+
+
+
+
         pass
     elif choice == '2':
         # https://www.w3schools.com/python/python_lists_sort.asp
+
+        def sort_total(pokemon):
+            return int(pokemon["total"])
+        pokemons.sort(key=sort_total, reverse = True)
+        print(pokemons[:10])
+
+
+
         pass
     elif choice == '3':
         # https://www.w3schools.com/python/python_lists_sort.asp
+        def sort_total(pokemon):
+            return int(pokemon["total"])
+        pokemons.sort(key=sort_total)
+        print(pokemons[:10])
+
         pass
     elif choice == '4':
         # Battle
@@ -52,6 +76,13 @@ while True:
         # Player choosing by entering Pokemon index
         # Damage is calculated by: (attack of Pokemon 2) - (defense of Pokemon 1) + (random from 5 to 20), and vice-versa
         # Player reaching 0 health (total) - lost
+        chosen_pokemon = input("Enter your pokemon number: ")
+        computer_pokemon = (random.choice(pokemons))
+
+        for pokemon in pokemons:
+            int(pokemons["hp"]) - int(pokemons["attack"]) - int(pokemons["defence"]) + random.randint(5, 20)
+
+
         pass
 
     elif choice == '5':
